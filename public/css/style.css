@@ -2,3 +2,198 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,pre,code,form,fields
 a {outline: none;} /* Gets rid of Firefox's dotted borders */
 a img {border: none;} /* Gets rid of IE's blue borders */
 
+@font-face {
+  font-family: 'someserif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/seriffont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'boldserif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/boldseriffont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'sansserif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/sansfont.woff') format('woff');
+}
+
+body, html {
+  font-size: 15px;
+  font-family: 'someserif';
+  text-shadow: 0px 1px 0px #ccc;
+  color: #333;
+  line-height: 25px;
+  background-image: url('/images/linen.png');
+  height: 100%;
+  margin: 0px;
+}
+
+#holdplacer {
+  font-size: 60px;
+  font-family: 'boldserif';
+  text-shadow: 0px 1px 0px #fff;
+  color: #00362E;
+  line-height: 80px;
+}
+
+#sunglasses {
+  width: 100%;
+  height: 100px;
+  /*-moz-box-shadow: 0px 2px 5px #999;
+  -webkit-box-shadow: 0px 2px 5px #999;
+  box-shadow: 0px 2px 5px #999;
+  background-color: #00362E;
+  background-image: url('/images/gpaper.png');*/
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  padding-top: 25px;
+  /*position: fixed;*/
+}
+
+#rapper {
+  width: 900px;
+  margin: 0 auto;
+  /*padding-top: 10px;*/
+}
+
+.inset {
+  -moz-box-shadow: 1px 0px 10px #ccc;
+  -webkit-box-shadow: 1px 0px 10px #ccc;
+  box-shadow: 1px 0px 10px #ccc;
+}
+
+.box {
+  background-color: #fff;
+  /*background-image: url('/images/linen.png');*/
+  margin-bottom: 25px;
+}
+
+.picture1 {
+  width: 500px;
+  height: 300px;
+  border: 10px solid #fff;
+  margin-right: 10px;
+  float: left;
+  margin-bottom: 25px;
+}
+
+.picture2 {
+  width: 350px;
+  height: 150px;
+  border: 10px solid #fff;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.picture3 {
+  width: 350px;
+  height: 120px;
+  border: 10px solid #fff;
+  margin-bottom: 25px;
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.sweater {
+  padding: 15px 25px;
+}
+
+.walrus {
+  height: 100px;
+  width: 224px;
+  margin: 1px 1px 1px 0;
+  float: left;
+  background-color: #000;
+}
+
+.tusk {
+  color: #fff;
+  font-family: 'sansserif';
+  font-size: 20px;
+  margin-top: 50px;
+  padding-left: 10px;
+  line-height: 30px;
+  text-shadow: none;
+  font-weight: normal;
+  background-color: rgba(256, 256, 256, 0.3);
+}
+
+#socks {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -90px;
+}
+
+.vest {
+  padding: 20px 0;
+}
+
+#rainboots {
+  text-align: center;
+  bottom: 0px;
+  left: 0px;
+  text-shadow: 0px 1px 0px #000;
+  background-image: url('/images/gpaper.png');
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  font-family: 'sansserif';
+  -moz-box-shadow: inset 1px 3px 10px #111;
+  -webkit-box-shadow: inset 1px 3px 10px #111;
+  box-shadow: inset 0px 3px 10px #111;
+}
+
+.cattail {
+	border-color: transparent transparent transparent #000;
+	border-style: solid;
+	border-width: 30px;
+	height: 0px;
+	width: 0px;
+	position: relative;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	margin-top: -18px;
+}
+
+.penguintail {
+	border-color: transparent transparent transparent #000;
+	border-style: solid;
+	border-width: 30px;
+	height: 0px;
+	width: 0px;
+	position: relative;
+	margin-top: -18px;
+}
+
+#upupup {
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#upupup a {
+  text-decoration: none;
+  color: #999;
+}
+
+#upupup a:hover {
+  color: #111;
+}
+
+#soles {
+  height: 90px;
+}
