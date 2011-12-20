@@ -143,13 +143,13 @@ body, html {
 .tusk {
   color: #fff;
   font-family: 'sansserif';
-  font-size: 20px;
+  font-size: 40px;
   margin-top: 50px;
   padding-left: 10px;
-  line-height: 30px;
+  line-height: 40px;
   text-shadow: none;
   font-weight: normal;
-  background-color: rgba(256, 256, 256, 0.3);
+  /*background-color: rgba(256, 256, 256, 0.3);*/
 }
 
 #socks {
@@ -236,14 +236,24 @@ body, html {
   left: 0px;
   width: 100%;
   height: 50px;
-  text-align: center;
-  -moz-box-shadow: 1px 0px 10px #000;
-  -webkit-box-shadow: 1px 0px 10px #000;
-  box-shadow: 1px 0px 10px #000;
+  -moz-box-shadow: 1px 0px 10px #111;
+  -webkit-box-shadow: 1px 0px 10px #111;
+  box-shadow: 1px 0px 10px #111;
   background-color: #B20321;
+  border-bottom: 1px solid #D3294D;
 }
 
-#tophat h2 {
+#tophatbow {
+  position: fixed;
+  z-index: 102;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+#tophatbow h2 {
   border-bottom: 1px dashed #4F0011;
   border-top: 1px dashed #4F0011;
   line-height: 35px;
@@ -251,7 +261,7 @@ body, html {
   margin-top: 6px;
 }
 
-#tophat a {
+#tophatbow a {
   text-transform: uppercase;
   text-decoration: none;
   text-shadow: none;
@@ -261,6 +271,13 @@ body, html {
   color: #fff;
 }
 
-#tophat a:hover {
-  color: #ccc;
+#tophatbow a:hover {
+  color: #EF5E7D;
+}
+
+#footsteps {
+  border-top: 1px dashed #D3294D;
+  border-bottom: 1px dashed #D3294D;
+  height: 36px;
+  margin-top: 7px;
 }
