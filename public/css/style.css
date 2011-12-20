@@ -16,11 +16,25 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   src: url('/fonts/boldseriffont.woff') format('woff');
 }
 
-@font-face {
+/*@font-face {
   font-family: 'sansserif';
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/sansfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'boldserif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/seriffont2.woff') format('woff');
+}*/
+
+@font-face {
+  font-family: 'sansserif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/sansserif2.woff') format('woff');
 }
 
 body, html {
@@ -29,38 +43,48 @@ body, html {
   text-shadow: 0px 1px 0px #ccc;
   color: #333;
   line-height: 25px;
-  background-image: url('/images/linen.png');
+  background-image: url('/images/gpaper.png');
   height: 100%;
   margin: 0px;
+  background-attachment: fixed;
 }
 
 #holdplacer {
   font-size: 60px;
   font-family: 'boldserif';
-  text-shadow: 0px 1px 0px #fff;
-  color: #00362E;
+  text-shadow: 0px 1px 0px #000;
+  color: #fff;
   line-height: 80px;
+  z-index: 50;
 }
 
 #sunglasses {
   width: 100%;
   height: 100px;
-  /*-moz-box-shadow: 0px 2px 5px #999;
-  -webkit-box-shadow: 0px 2px 5px #999;
-  box-shadow: 0px 2px 5px #999;
-  background-color: #00362E;
-  background-image: url('/images/gpaper.png');*/
+  margin-top: 50px;
   top: 0px;
   left: 0px;
   text-align: center;
   padding-top: 25px;
-  /*position: fixed;*/
+  z-index: 50;
+  position: fixed;
+}
+
+#bow {
+  position: relative;
+  width: 100%;
+  margin-top: 160px;
+  background-image: url('/images/linen.png');
+  z-index: 100;
+  padding-top: 30px;
+  -moz-box-shadow: 1px 0px 10px #000;
+  -webkit-box-shadow: 1px 0px 10px #000;
+  box-shadow: 1px 0px 10px #000;
 }
 
 #rapper {
   width: 900px;
   margin: 0 auto;
-  /*padding-top: 10px;*/
 }
 
 .inset {
@@ -140,6 +164,8 @@ body, html {
 }
 
 #rainboots {
+  position: relative;
+  z-index: 101;
   text-align: center;
   bottom: 0px;
   left: 0px;
@@ -194,6 +220,47 @@ body, html {
   color: #111;
 }
 
+.blood {
+  color: #B20321;
+  text-shadow: 0px 1px 0px #ccc;
+}
+
 #soles {
   height: 90px;
+}
+
+#tophat {
+  position: fixed;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  -moz-box-shadow: 1px 0px 10px #000;
+  -webkit-box-shadow: 1px 0px 10px #000;
+  box-shadow: 1px 0px 10px #000;
+  background-color: #B20321;
+}
+
+#tophat h2 {
+  border-bottom: 1px dashed #4F0011;
+  border-top: 1px dashed #4F0011;
+  line-height: 35px;
+  margin: 0px;
+  margin-top: 6px;
+}
+
+#tophat a {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: none;
+  font-family: 'sansserif';
+  font-size: 20px;
+  margin: 0 20px;
+  color: #fff;
+}
+
+#tophat a:hover {
+  color: #ccc;
 }
