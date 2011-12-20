@@ -212,12 +212,15 @@ body, html {
 }
 
 #upupup a {
-  text-decoration: none;
-  color: #999;
+  opacity: 0.2;
+  transition:opacity 150ms ease-in;
+  -o-transition:opacity 150ms ease-in; 
+  -moz-transition:opacity 150s ease-in; 
+  -webkit-transition:opacity 150ms ease-in;
 }
 
 #upupup a:hover {
-  color: #111;
+  opacity: 0.3;
 }
 
 .blood {
@@ -264,15 +267,16 @@ body, html {
 #tophatbow a {
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: none;
+  text-shadow: 1px 1px 0px #D3294D;
   font-family: 'sansserif';
   font-size: 20px;
   margin: 0 20px;
-  color: #fff;
+  color: #4F0011;
+  font-weight: normal;
 }
 
 #tophatbow a:hover {
-  color: #EF5E7D;
+  color: #2D000C;
 }
 
 #footsteps {
