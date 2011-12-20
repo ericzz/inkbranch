@@ -43,7 +43,7 @@ body, html {
   color: #333;
   line-height: 25px;
   background-image: url('/images/gpaper.png');
-  height: 100%;
+  height: 87.5%;
   margin: 0px;
   background-attachment: fixed;
 }
@@ -80,12 +80,12 @@ body, html {
   position: relative;
   width: 100%;
   /*margin-top: 160px;*/
-  background-image: url('/images/linen.png');
+  
   z-index: 100;
   padding-top: 30px;
-  -moz-box-shadow: 1px 0px 10px #000;
+  /*-moz-box-shadow: 1px 0px 10px #000;
   -webkit-box-shadow: 1px 0px 10px #000;
-  box-shadow: 1px 0px 10px #000;
+  box-shadow: 1px 0px 10px #000;*/
   border-top: 1px solid #fff;
 }
 
@@ -102,7 +102,6 @@ body, html {
 
 .box {
   background-color: #fff;
-  /*background-image: url('/images/linen.png');*/
   margin-bottom: 25px;
 }
 
@@ -166,6 +165,12 @@ body, html {
   height: 100%;
   margin-bottom: -90px;
   position: relative;
+  background-image: url('/images/linen.png');
+  top:0px;
+  -moz-box-shadow: 1px 0px 10px #000;
+  -webkit-box-shadow: 1px 0px 10px #000;
+  box-shadow: 1px 0px 10px #000;
+  z-index: 100;
 }
 
 .vest {
@@ -393,4 +398,10 @@ body, html {
   margin: 5px;
   text-shadow: 0px 1px 0px #fff;
   font-family: 'someserif';
+}
+
+#top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }

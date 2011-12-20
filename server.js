@@ -16,11 +16,11 @@ app.get('/', function(req, res){
 });
 
 app.get('/home', function(req, res){
-  res.render('index');
+  res.render('index', {page: 'home'});
 });
 
 app.get('/designs', function(req, res){
-  res.render('designs');
+  res.render('designs', {page: 'designs'});
 });
 
 var port = process.env.PORT || 8084

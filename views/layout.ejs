@@ -18,26 +18,34 @@
 </head> 
  
 <body>
-  <div id="socks">
+  <div id="top"></div>
     <div id="tophat">
       <div id="footsteps"></div>
     </div>
     <div id="tophatbow">
-      <h2><a href="/home">home</a>
-      <a href="/#papers">papers</a>
-      <a href="/#pricing">pricing</a>
+      <h2>
+      <% if (page === 'home') { %><a href="/#top" class="scroll">home</a>
+      <a href="/#papers" class="scroll">papers</a>
+      <a href="/#pricing" class="scroll">pricing</a><% } else {%>
+      <a href="/home">home</a>
+      <a href="/home#papers">papers</a>
+      <a href="/home#pricing">pricing</a><% } %>
       <a href="/designs">designs</a>
-      <a href="/#purchase">purchase</a></h2>
+      <a href="/purchase">purchase</a></h2>
     </div>
     <div id="sunglasses">
       <div id="holdplacer">
         inkbranch<span class="blood">.</span>
       </div>
     </div>
+      <div id="socks">
     <div id="sparkles">
       <div id="bow">
         <div id="rapper">
           <%-body%>
+          <div id="upupup">
+            <a href="#top" class="scroll"><img src="/images/uparrow.png" width="100px"></a>
+          </div>
         </div>
         <div id="soles">
         </div>
