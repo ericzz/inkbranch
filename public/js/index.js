@@ -2,25 +2,25 @@ $(document).ready(function(){
 	
 	var $active = $("#desc");
 	
-	$("#blokus").hover(function(){
+	$("#blokus").click(function(){
 		$("#iceskates").stop().animate( { 
 			"margin-left":  "0px",
 			borderLeftColor : "#26444D"
 		}, 300);	
 	});
-	$("#tetris").hover(function(){
+	$("#tetris").click(function(){
 		$("#iceskates").stop().animate( { 
 			"margin-left": "226px",
 			borderLeftColor : "#86B23A"
 		}, 300);		
 	});
-	$("#jenga").hover(function(){
+	$("#jenga").click(function(){
 		$("#iceskates").stop().animate( { 
 			"margin-left":  "451px",
 			borderLeftColor : "#C5E6E7"
 		}, 300);		
 	});
-	$("#tangrams").hover(function(){
+	$("#tangrams").click(function(){
 		$("#iceskates").stop().animate( { 
 			"margin-left": "676px",
 			borderLeftColor : "#B20321"
