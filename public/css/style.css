@@ -23,12 +23,12 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   src: url('/fonts/sansfont.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'boldserif';
+*/@font-face {
+  font-family: 'italserif';
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/seriffont2.woff') format('woff');
-}*/
+}
 
 @font-face {
   font-family: 'sansserif';
@@ -40,7 +40,6 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 body, html {
   font-size: 15px;
   font-family: 'someserif';
-  text-shadow: 0px 1px 0px #ccc;
   color: #333;
   line-height: 25px;
   background-image: url('/images/gpaper.png');
@@ -89,9 +88,9 @@ body, html {
 }
 
 .inset {
-  -moz-box-shadow: 1px 0px 10px #ccc;
-  -webkit-box-shadow: 1px 0px 10px #ccc;
-  box-shadow: 1px 0px 10px #ccc;
+  -moz-box-shadow: 1px 0px 10px #aaa;
+  -webkit-box-shadow: 1px 0px 10px #aaa;
+  box-shadow: 1px 0px 10px #aaa;
 }
 
 .box {
@@ -139,18 +138,19 @@ body, html {
   margin: 1px 1px 1px 0;
   float: left;
   background-color: #000;
+  cursor: pointer;
 }
 
 .tusk {
-  color: #fff;
   font-family: 'sansserif';
-  font-size: 40px;
-  margin-top: 50px;
+  /*font-family: 'Sofia';*/
+  font-size: 30px;
+  margin-top: 60px;
+  text-transform: uppercase;
   padding-left: 10px;
   line-height: 40px;
-  text-shadow: none;
   font-weight: normal;
-  /*background-color: rgba(256, 256, 256, 0.3);*/
+  letter-spacing: 2px;
 }
 
 #socks {
@@ -185,25 +185,27 @@ body, html {
 }
 
 .cattail {
-	border-color: transparent transparent transparent #000;
+	border-color: transparent transparent transparent #26444D;
 	border-style: solid;
 	border-width: 30px;
 	height: 0px;
 	width: 0px;
 	position: relative;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	margin-top: -18px;
+	-webkit-transform: rotate(225deg);
+	-moz-transform: rotate(225deg);
+	margin: -10px 0 0 -30px;
+	float: left;
 }
 
-.penguintail {
-	border-color: transparent transparent transparent #000;
+#iceskates {
+	border-color: transparent transparent transparent #26444D;
 	border-style: solid;
 	border-width: 30px;
 	height: 0px;
 	width: 0px;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
 	position: relative;
-	margin-top: -18px;
 }
 
 #upupup {
@@ -248,6 +250,21 @@ body, html {
   border-bottom: 1px solid #D3294D;
 }
 
+#stupid {
+  width: 300px;
+  height: 100px;
+  margin-left: 300px;
+  background-color: #B20321;
+  border: 1px solid #D3294D;
+  margin-bottom: 30px;
+  font-family: 'boldserif';
+  font-size: 60px;
+  line-height: 90px;
+  color: #4F0011;
+  text-shadow: 1px 1px 0px #D3294D;
+  text-align: center;
+}
+
 #tophatbow {
   position: fixed;
   z-index: 102;
@@ -289,8 +306,8 @@ body, html {
 }
 
 .subtle {
-  color: #999;
-  opacity: 0.5;
+  color: #000;
+  opacity: 0.15;
   font-family: 'boldserif';
   font-size: 30px;
   line-height: 40px;
@@ -298,3 +315,56 @@ body, html {
   margin-top: 0;
   text-shadow: 0px 1px 0px #fff;
 }
+
+.right {
+  float: right;
+}
+
+#moosespeaks {
+  width: 400px;
+  height: 180px;
+  margin-top: 20px;
+  float: left;
+  background-color: #26444D;
+  font-family: 'Sofia';
+  font-size: 30px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  text-shadow: 0px 1px 0px #000;
+}
+
+#ice {
+  height: 30px;
+  width: 100%;
+  margin-top: -1px
+}
+
+#blokus {
+  background-color: #26444D; 
+  text-shadow: 0px 1px 0px #000; 
+  color: #fff;
+}
+
+#tetris {
+  background-color: #86B23A; 
+  text-shadow: 0px 1px 0px #26444D; 
+  color: #fff;
+}
+
+#jenga {
+  background-color: #C5E6E7; 
+  text-shadow: 0px 1px 0px #fff; 
+  color: #405959;
+}
+
+#tangrams {
+  background-color: #B20321; 
+  text-shadow: 0px 1px 0px #4F0011; 
+  color: #fff;
+}
+
+.hoodie {
+  padding: 0 25px 25px 25px;
+}
+
