@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	//var $active = $("#homepage");
+	var $active = $("#desc");
 	
 	$("#blokus").hover(function(){
 		$("#iceskates").stop().animate( { 
@@ -26,32 +26,30 @@ $(document).ready(function(){
 			borderLeftColor : "#B20321"
 		}, 300);
 	});
-
-/*	
-	$("#home").click(function(){
-
+	
+	$("#blokus").click(function(){
 		$active.css({"display": "none"});
-		$active = $("#homepage");
-		$("#homepage").slideToggle("slow");
+		$active = $("#desc");
+		$("#desc").fadeToggle("slow");
 		
 	});
-	$("#photos").click(function(){
+	$("#tetris").click(function(){
 		$active.css({"display": "none"});
-		$active = $("#pics");
-		$("#pics").slideToggle("slow");
+		$active = $("#pic1");
+		$("#pic1").fadeToggle("slow");
 		
 	});
-	$("#proj").click(function(){
+	$("#jenga").click(function(){
 		$active.css({"display": "none"});
-		$active = $("#projects");
-		$("#projects").slideToggle("slow");
+		$active = $("#pic2");
+		$("#pic2").fadeToggle("slow");
 		
 	});
-	$("#other").click(function(){
+	$("#tangrams").click(function(){
 		$active.css({"display": "none"});
-		$active = $("#link");
-		$("#link").slideToggle("slow");
+		$active = $("#pic3");
+		$("#pic3").fadeToggle("slow");
 		
-	});*/
+	});
 	
 });

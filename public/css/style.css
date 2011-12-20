@@ -368,3 +368,6 @@ body, html {
   padding: 0 25px 25px 25px;
 }
 
+#pic1, #pic2, #pic3 {
+  display: none;
+}
