@@ -23,6 +23,10 @@ app.get('/designs', function(req, res){
   res.render('designs', {page: 'designs'});
 });
 
+app.get('/payment', function(req, res){
+  res.render('payment', {page: 'payment'});
+});
+
 var port = process.env.PORT || 8084
 app.listen(port);
 

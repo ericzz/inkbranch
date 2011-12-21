@@ -14,6 +14,16 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> 
 <script type="text/javascript" src="/js/jquery.color.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
+<% if (page === 'payment') { %>
+  <script type="text/javascript" src="/js/pay.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+
+  <script type="text/javascript">
+    // this identifies your website in the createToken call below
+    Stripe.setPublishableKey('pk_F56u4OJSBqDz79RcMBLNVNIciEVqX');
+
+  </script>
+<% } %>
 
 </head> 
  

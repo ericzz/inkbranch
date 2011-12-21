@@ -38,10 +38,10 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 }
 
 body, html {
-  font-size: 15px;
-  font-family: 'someserif';
+  font-size: 18px;
+  font-family: 'sansserif';
   color: #333;
-  line-height: 25px;
+  line-height: 30px;
   background-image: url('/images/gpaper.png');
   height: 87.5%;
   margin: 0px;
