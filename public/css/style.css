@@ -46,13 +46,15 @@ body, html {
   height: 87.5%;
   margin: 0px;
   background-attachment: fixed;
+  text-shadow: 0px 1px 0px #fff;
 }
 
+/* Logo holder */
 #holdplacer {
   font-size: 60px;
   font-family: 'boldserif';
   text-shadow: 0px 1px 0px #000;
-  color: #fff;
+  color: #f0f0f0;
   line-height: 80px;
   z-index: 50;
 }
@@ -94,6 +96,7 @@ body, html {
   margin: 0 auto;
 }
 
+/* Content box stylings. */
 .inset {
   -moz-box-shadow: 1px 0px 10px #aaa;
   -webkit-box-shadow: 1px 0px 10px #aaa;
@@ -101,7 +104,8 @@ body, html {
 }
 
 .box {
-  background-color: #fff;
+  background-color: #f0f0f0;
+  border: 1px solid #fff;
   margin-bottom: 25px;
 }
 
@@ -134,14 +138,16 @@ body, html {
   clear: both;
 }
 
+/* Extra padding. */
 .sweater {
   padding: 15px 25px;
 }
 
+/* Paper boxes. */
 .walrus {
   height: 100px;
   width: 224px;
-  margin: 1px 1px 1px 0;
+  margin: 0px 1px 0px 0px;
   float: left;
   background-color: #000;
   cursor: pointer;
@@ -159,6 +165,7 @@ body, html {
   letter-spacing: 2px;
 }
 
+/* Holds all the content. */
 #socks {
   min-height: 100%;
   height: auto !important;
@@ -173,10 +180,12 @@ body, html {
   z-index: 100;
 }
 
+/** Top-bottom extra padding. Inaptly named. */
 .vest {
   padding: 20px 0;
 }
 
+/* Footer with rain protection. */
 #rainboots {
   position: relative;
   z-index: 101;
@@ -210,6 +219,7 @@ body, html {
 	float: left;
 }
 
+/* Little floating triangle. */
 #iceskates {
 	border-color: transparent transparent transparent #26444D;
 	border-style: solid;
@@ -221,6 +231,7 @@ body, html {
 	position: relative;
 }
 
+/* Back to top. */
 #upupup {
   font-size: 40px;
   line-height: 60px;
@@ -240,15 +251,18 @@ body, html {
   opacity: 0.3;
 }
 
+/* Red text. */
 .blood {
   color: #B20321;
   text-shadow: 0px 1px 0px #ccc;
 }
 
+/* Invisible footer pusher. */
 #soles {
   height: 90px;
 }
 
+/* Navigation bar. */
 #tophat {
   position: fixed;
   z-index: 101;
@@ -259,10 +273,11 @@ body, html {
   -moz-box-shadow: 1px 0px 10px #111;
   -webkit-box-shadow: 1px 0px 10px #111;
   box-shadow: 1px 0px 10px #111;
-  background-color: #B20321;
-  border-bottom: 1px solid #D3294D;
+  background-color: #5b3800;
+  border-bottom: 1px solid #673f00;
 }
 
+/* Stupidly large button. */
 #stupid {
   width: 300px;
   height: 100px;
@@ -278,9 +293,10 @@ body, html {
   text-align: center;
 }
 
+/* Navigation bar flourishes. */
 #tophatbow {
   position: fixed;
-  z-index: 102;
+  z-index: 103;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -288,9 +304,39 @@ body, html {
   text-align: center;
 }
 
+#ink {
+  height: 50px;
+  width: 200px;
+  margin-left: 0px;
+background: -moz-radial-gradient(center, ellipse cover,  rgba(153,100,26,1) 0%, rgba(160,110,49,0.47) 25%, rgba(160,110,49,0) 47%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(153,100,26,1)), color-stop(25%,rgba(160,110,49,0.47)), color-stop(47%,rgba(160,110,49,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(153,100,26,1) 0%,rgba(160,110,49,0.47) 25%,rgba(160,110,49,0) 47%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(153,100,26,1) 0%,rgba(160,110,49,0.47) 25%,rgba(160,110,49,0) 47%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(153,100,26,1) 0%,rgba(160,110,49,0.47) 25%,rgba(160,110,49,0) 47%); /* IE10+ */
+background: radial-gradient(center, ellipse cover,  rgba(153,100,26,1) 0%,rgba(160,110,49,0.47) 25%,rgba(160,110,49,0) 47%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99641a', endColorstr='#00a06e31',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+#water {
+  width: 650px;
+  margin: 0 auto;
+  height: 50px;
+  opacity: 0.4;
+}
+
+#cup {
+  position: fixed;
+  z-index: 102;
+  width: 100%;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+}
+
 #tophatbow h2 {
-  border-bottom: 1px dashed #4F0011;
-  border-top: 1px dashed #4F0011;
+  border-bottom: 1px dashed #673f00;
+  border-top: 1px dashed #673f00;
   line-height: 35px;
   margin: 0px;
   margin-top: 6px;
@@ -299,21 +345,17 @@ body, html {
 #tophatbow a {
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 1px 1px 0px #D3294D;
+  text-shadow: 0px 1px 0px #804e00;
   font-family: 'sansserif';
   font-size: 20px;
   margin: 0 20px;
-  color: #4F0011;
+  color: #000;
   font-weight: normal;
 }
 
-#tophatbow a:hover {
-  color: #2D000C;
-}
-
 #footsteps {
-  border-top: 1px dashed #D3294D;
-  border-bottom: 1px dashed #D3294D;
+  border-top: 1px dashed #241600;
+  border-bottom: 1px dashed #241600;
   height: 36px;
   margin-top: 7px;
 }
@@ -375,6 +417,8 @@ body, html {
   background-color: #B20321; 
   text-shadow: 0px 1px 0px #4F0011; 
   color: #fff;
+  margin-right: 0px;
+  width: 223px;
 }
 
 .hoodie {
@@ -391,7 +435,7 @@ body, html {
   font-family: 'sansserif';
   color: #333;
   margin-top: 10px;
-  text-shadow: 0px 1px 0px #fff;
+
 }
 
 .commentary h1, .scommentary h1 {
