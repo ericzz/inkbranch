@@ -59,6 +59,7 @@ body, html {
   z-index: 50;
 }
 
+
 #sunglasses {
   width: 100%;
   height: 100px;
@@ -70,6 +71,7 @@ body, html {
   z-index: 50;
   position: fixed;
 }
+
 
 #sparkles {
   margin-top: 160px;
