@@ -1,0 +1,23 @@
+<% if(locals.login) { %>
+<%-login%>
+<% } %>
+===========
+<% if(locals.register) { %>
+<%-register%>
+<% } %>
+
+
+<h1>login</h1>
+<form action="?" method="post">
+<input type="text" name="email">
+<input type="text" name="password">
+<button></button>
+</form>
+
+<h1>register</h1>
+<form action="?" method="post">
+<input type="text" name="email">
+<input type="text" name="password">
+<input type="hidden" name="register" value="true">
+<button></button>
+</form>

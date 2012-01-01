@@ -62,6 +62,11 @@
     <div id="sparkles">
       <div id="bow">
         <div id="rapper">
+          <% if(info.length > 0) { 
+               for(var i = 0, ii = info.length; i < ii; i++) { %>
+                <h2><%=info[i]%></h2>
+          <%   }
+              }  %>
           <%-body%>
           <div id="upupup">
             <a href="#top" class="scroll"><img src="/images/uparrow.png" width="100px"></a>

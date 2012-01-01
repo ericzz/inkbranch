@@ -16,14 +16,7 @@ a img {border: none;} /* Gets rid of IE's blue borders */
   src: url('/fonts/boldseriffont.woff') format('woff');
 }
 
-/*@font-face {
-  font-family: 'sansserif';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/sansfont.woff') format('woff');
-}
-
-*/@font-face {
+@font-face {
   font-family: 'italserif';
   font-style: normal;
   font-weight: 400;
@@ -40,13 +33,13 @@ a img {border: none;} /* Gets rid of IE's blue borders */
 body, html {
   font-size: 18px;
   font-family: 'sansserif';
-  color: #333;
+  color: #000;
   line-height: 30px;
   background-image: url('/images/gpaper.png');
   height: 87.5%;
   margin: 0px;
   background-attachment: fixed;
-  text-shadow: 0px 1px 0px #fff;
+  text-shadow: 0px 0px 1px #ddd;
 }
 
 /* Logo holder */
@@ -100,9 +93,9 @@ body, html {
 
 /* Content box stylings. */
 .inset {
-  -moz-box-shadow: 1px 0px 10px #aaa;
-  -webkit-box-shadow: 1px 0px 10px #aaa;
-  box-shadow: 1px 0px 10px #aaa;
+  -moz-box-shadow: 1px 0px 7px #ccc;
+  -webkit-box-shadow: 1px 0px 7px #ccc;
+  box-shadow: 1px 0px 7px #ccc;
 }
 
 .box {
@@ -142,7 +135,7 @@ body, html {
 
 /* Extra padding. */
 .sweater {
-  padding: 15px 25px;
+  padding: 20px 27px;
 }
 
 /* Paper boxes. */
@@ -423,10 +416,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99641a', end
   width: 223px;
 }
 
-.hoodie {
-  padding: 0 25px 25px 25px;
-}
-
 #pic1, #pic2, #pic3 {
   display: none;
 }
@@ -441,7 +430,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99641a', end
 }
 
 .commentary h1, .scommentary h1 {
-  margin: 5px;
+  margin: 5px 0;
   text-shadow: 0px 1px 0px #fff;
   font-family: 'someserif';
 }
