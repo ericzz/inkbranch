@@ -12,7 +12,9 @@
   },
   "dependencies":{
     "express":"",
-    "ejs":""
+    "ejs":"",
+    "mongoose": "",
+    "stripe": "",
   },
   "devDependencies": {}
 }
