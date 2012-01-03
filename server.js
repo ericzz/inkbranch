@@ -15,6 +15,10 @@ var User = mongoose.model('User');
 // Utils
 var util = require('./util.js');
 
+// Stripe
+var api_key = 'pk_F56u4OJSBqDz79RcMBLNVNIciEVqX';  // secret stripe API key
+var stripe = require('stripe')(api_key);
+
 // Setup Express
 var express = require('express');
 var app =  express.createServer();

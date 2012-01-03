@@ -25,19 +25,23 @@
   </script>
 <% } %>
 
+<script type="text/javascript">
+  
+</script>
+
 </head> 
  
 <body>
   <div id="top"></div>
-    <div id="tophat">
-      <div id="footsteps"></div>
+    <div id="navigation">
+      <div id="navigationlines"></div>
     </div>
     <div id="cup">
       <div id="water">
         <div id="ink"></div>
       </div>
     </div>
-    <div id="tophatbow">
+    <div id="navigationlinks">
       <h2>
       <% if (page === 'home') { %><a href="/#top" class="scroll">home</a>
       <a href="/#papers" class="scroll">papers</a>
@@ -48,15 +52,15 @@
       <a href="/designs">designs</a>
       <a href="/purchase">purchase</a></h2>
     </div>
-    <div id="sunglasses">
+    <div id="title">
       <div id="holdplacer">
         inkbranch
       </div>
     </div>
-      <div id="socks">
-    <div id="sparkles">
-      <div id="bow">
-        <div id="rapper">
+      <div id="wrapper">
+    <div id="pushdown">
+      <div id="toppadding">
+        <div id="content">
           <% if(info.length > 0) { 
                for(var i = 0, ii = info.length; i < ii; i++) { %>
                 <h2><%=info[i]%></h2>
@@ -73,7 +77,7 @@
     </div>
   </div>
   
-  <div id="rainboots" class="vest">
+  <div id="footer" class="tbpadding">
       Politics
   </div>
 </body> 
