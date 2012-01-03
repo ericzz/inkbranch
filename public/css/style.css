@@ -105,7 +105,6 @@ body, html {
 .picture1 {
   width: 500px;
   height: 300px;
-  border: 10px solid #fff;
   margin-right: 10px;
   float: left;
   margin-bottom: 25px;
@@ -114,7 +113,6 @@ body, html {
 .picture2 {
   width: 350px;
   height: 150px;
-  border: 10px solid #fff;
   margin-bottom: 10px;
   float: right;
 }
@@ -122,9 +120,22 @@ body, html {
 .picture3 {
   width: 350px;
   height: 120px;
-  border: 10px solid #fff;
   margin-bottom: 25px;
   float: right;
+ 
+}
+
+.picture {
+  cursor: pointer;
+  transition:border-color 150ms ease-in;
+  -o-transition:border-color 150ms ease-in; 
+  -moz-transition:border-color 150s ease-in; 
+  -webkit-transition:border-color 150ms ease-in;
+  border: 10px solid #fff;
+}
+
+.picture:hover {
+  border-color: #eee;
 }
 
 .clear {
@@ -364,6 +375,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99641a', end
   text-shadow: 0px 1px 0px #fff;
 }
 
+h2 {
+  color: #000;
+  opacity: 0.15;
+  font-family: 'boldserif';
+  font-size: 30px;
+  line-height: 40px;
+  margin-top: 0;
+  text-shadow: 0px 1px 0px #fff;
+}
+
+
+
 .right {
   float: right;
 }
@@ -424,6 +447,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99641a', end
   font-family: 'sansserif';
   color: #333;
   margin-top: 10px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
 }
 
@@ -437,4 +466,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99641a', end
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+
+
+/* Login page */
+#loginbox {
+  float: left;
+  width: 448px;
+}
+
+#registerbox {
+  float: right;
+  width: 448px;
 }
