@@ -57,11 +57,11 @@ app.get('/cart', init, function(req, res){
 
 app.get('/payment', init, function(req, res){
 
-  if (req.session.cart.length <= 0) {
+  /*if (req.session.cart.length <= 0) {
     req.flash('info', 'You don\t have any items in your cart!');
     res.redirect('/cart');
     return;
-  }
+  }*/
 
   if (req.session.user) {
     res.render('payment', {page: 'payment'});
@@ -69,6 +69,25 @@ app.get('/payment', init, function(req, res){
     req.flash('info', 'Sign in or register an account to complete payment');
     res.redirect('/login/payment');
   }
+});
+
+// Paying
+app.post('/payment/submit', init, function(req, res) {
+  stripe.charges.create({
+    amount: req.body.amount,
+    currency: 'usd',
+    card: req.body.token,
+    description: req.session.cart
+  }, function(err, response) {
+    if (!err) {
+      console.log(response.id);
+      req.flash('info', 'Payment successful!');
+      res.redirect('/payment/success');
+    } else {
+      req.flash('error', 'Payment unsuccessful.');
+      res.redirect('/payment');
+    }
+  });
 });
 
 app.get('/account', init, function(req, res) {
@@ -173,6 +192,8 @@ app.get('/cart/update', init, function(req, res) {
   }
 });
 
+
+
 function init(req, res, next) {
   
   if (!req.session.cart) {
@@ -183,5 +204,5 @@ function init(req, res, next) {
 }
 
 
-var port = process.env.PORT || 8084
+var port = process.env.PORT || 8088
 app.listen(port);
