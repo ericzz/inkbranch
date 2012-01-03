@@ -12,6 +12,12 @@ var Address = new Schema({
   , phone     : String
 });
 mongoose.model('Address', Address);
+
+Address
+  .virtual('condensed')
+  .get(function() {
+    return this.addr1 + ', ' + this.addr2 + ', ' + this.city + ', ' + this.state + ' ' + this.zip;
+  });
   
 
 var Style = new Schema({
@@ -30,6 +36,7 @@ var Item = new Schema({
 });
 mongoose.model('Item', Item);
 
+// Will billing address be needed as well?
 var Order = new Schema({
     id            : ObjectId    //
   , date          : Date        // date of order
@@ -40,6 +47,18 @@ var Order = new Schema({
   , email         : String      // email/username of customer
 });
 mongoose.model('Order', Order);
+
+Order
+  .virtual('shipto')
+  .get(function() {
+    Address.findById(this.address, function(err, address) {
+      if (!err) {
+        return address.condensed;
+      } else {
+        // An address was never given.
+      }
+    });
+  });
 
 
 var User = new Schema({

@@ -24,6 +24,7 @@ Stripe.setPublishableKey('pk_F56u4OJSBqDz79RcMBLNVNIciEVqX');
     
 function stripeResponseHandler(status, response) {
   if (response.error) {
+    // TODO: determine if this can all be handled server side.
     $(".payment-errors").html(response.error.message);
   } else {
     var form$ = $("#payment-form");

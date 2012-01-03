@@ -63,12 +63,7 @@ app.get('/payment', init, function(req, res){
     return;
   }*/
 
-  if (req.session.user) {
     res.render('payment', {page: 'payment'});
-  } else {
-    req.flash('info', 'Sign in or register an account to complete payment');
-    res.redirect('/login/payment');
-  }
 });
 
 // Paying
@@ -79,11 +74,39 @@ app.post('/payment/submit', init, function(req, res) {
     card: req.body.token,
     description: req.session.cart
   }, function(err, response) {
-    if (!err) {
+    if (!response.error) {
       console.log(response.id);
+      
+      var address = new Address({
+        addr1: req.body.shipstreet,
+        addr2: req.body.shipstreet2,
+        city: req.body.shipcity,
+        state: req.body.shipstate,
+        zip: req.body.shipzip,
+        phone: req.body.phone
+      });
+      
+      var order = new Order({
+        date: new Date(), // TODO: time zone handling.
+        address: address._id,
+        status: "paid", // TODO: admin panel for status handling/viewing?
+        items: req.session.cart,
+        payment: response.id,
+        email: req.body.email
+      });
+      
+      order.save(function(err) {
+        log(err);
+      });
+      
+      address.save(function(err) {
+        log(err);
+      });
+      
       req.flash('info', 'Payment successful!');
       res.redirect('/payment/success');
     } else {
+      console.log(response.error.message);
       req.flash('error', 'Payment unsuccessful.');
       res.redirect('/payment');
     }

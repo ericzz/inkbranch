@@ -15,6 +15,28 @@
         <span> / </span>
         <input type="text" size="4" class="card-expiry-year"/>
     </div>
+    <div class="form-row">
+      <h1>Shipping Address</h1>
+      <label>Address Line 1</label>
+      <input type="text" size="20" name="shipstreet"/>
+      <label>Address Line 2 (optional)</label>
+      <input type="text" size="20" name="shipstreet2"/>
+      <label>City</label>
+      <input type="text" size="20" name="shipcity"/>
+      <label>State/Province/Region</label>
+      <input type="text" size="4" name="shipstate"/>
+      <label>ZIP code</label>
+      <input type="text" size="4" name="shipzip"/>
+      <label>Phone number</label>
+      <input type="tel" size="6" name="phone"/>
+      
+      <!-- TODO: Separate billing address? -->
+      
+    </div>
+    <div class="form-row">
+      <label>Email</label>
+      <input type="email" size="20" name="email"/>
+    </div>
     <input type="hidden" name="amount" value="1000">
     <button type="submit" class="submit-button">Submit Payment</button>
   </form>
