@@ -1,34 +1,54 @@
 
 
 
-<div class="inset box" id="loginbox"><h2>Sign in</h2></div>
+<div id="logindiv">
+  <h2>Sign in</h2>
+  <div class="inset box" id="loginbox">
+    <div id="loginribbon" class="boxribbon">    
 
-<div class="inset box" id="registerbox"><h2>Register</h2></div>
+      <% if(locals.login) { %>
+      <%-login%>
+      <% }  else { %>
+     &nbsp;
+      <% } %>
+    </div>
+    <div class="padded">
+      <form action="?" method="post">
+      <div class="inputlabel">Email</div>
+      <input type="text" name="email" id="loginemail">
+      <div class="inputlabel">Password</div>
+      <input type="password" name="password" id="loginpassword">
+      <br>
+      <div align="center"><button>Submit</button></div>
+      </form>
+    </div>  
+  
+  </div>
+</div>
+<div id="registerdiv">
+  <h2>Register</h2>
+  <div class="inset box" id="registerbox">
+    <div id="registerribbon" class="boxribbon">
+      
+      <% if(locals.register) { %>
+      <%-register%>
+      <% }  else { %>
+      &nbsp;
+      <% } %>
+    </div>
+    <div class="padded">
+      <form action="?" method="post">
+      <div class="inputlabel">Email</div>
+      <input type="text" name="email" id="registeremail">
+      <div class="inputlabel">Password</div>
+      <input type="password" name="password" id="registerpassword">
+      <div class="inputlabel">Confirm password</div>
+      <input type="password" name="verifypassword" id="registerverify">
+      <input type="hidden" name="register" value="true">
+      <div align="center"><button>Register</button></div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
-<!--
-<% if(locals.login) { %>
-<%-login%>
-<% } %>
-===========
-<% if(locals.register) { %>
-<%-register%>
-<% } %>
-
-
-
-<h1 class="subtle">Sign in</h1>
-<form action="?" method="post">
-<input type="text" name="email">
-<input type="text" name="password">
-<button></button>
-</form>
-
-<h1>register</h1>
-<form action="?" method="post">
-<input type="text" name="email">
-<input type="text" name="password">
-<input type="hidden" name="register" value="true">
-<button></button>
-</form>
--->

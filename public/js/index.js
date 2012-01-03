@@ -65,3 +65,43 @@ $(document).ready(function(){
 	});
 	
 });
+
+
+
+
+
+// Login page
+
+$(document).ready(function(){
+
+  $("#registeremail, #registerpassword, #registerverify").blur(function(){
+    validate();
+  });
+  
+
+});
+
+var validate = function() {
+  var password = $("#registerpassword").val();
+  var verify = $("#registerverify").val();
+  $.getJSON('/register/verify', {email: $("#registeremail").val()}, function(res){
+    if(res.error) {
+      $("#registerribbon").removeClass("green").addClass("red").text(res.error);
+      return;
+    }
+    if(password !== verify) {
+      $("#registerribbon").removeClass("green").addClass("red").text("Passwords do not match");
+      return;
+    }
+    
+    if(password.length < 6) {
+      $("#registerribbon").removeClass("green").addClass("red").text("Password must be at least 6 characters");
+      return;
+    }
+    
+    $("#registerribbon").removeClass("red").addClass("green").text("");
+    
+  });  
+};
+
+  
