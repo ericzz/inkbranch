@@ -2,48 +2,74 @@
 <div class="sweater">
 
   <form action="/payment/submit" method="POST" id="payment-form">
- 
-    <div class="inputgroup" id="cardgroup">
-      <div class="inputlabel">Credit card number</div>
-      <input type="text" autocomplete="off" class="card-number" size="30" placeholder="Card number">  
+    
+    <h1>Shipping Address</h1>
+    
+    <div class="inputgroup" id="shipstreetgroup">
+      <div class="inputlabel">Address</div>
+      <input type="text" size="60" name="shipstreet" id="shipstreet" placeholder="Address line 1">  
+    </div>
+    
+    <div class="inputgroup" id="shipstreet2group">
+      <div class="inputlabel">Address line 2</div>
+      <input type="text" size="60" name="shipstreet2" id="shipstreet2" placeholder="Address line 2">  
+    </div>
+    
+    <div class="clear"></div>
+  
+    <div class="form-row left">
+      <div class="inputlabel">City</div>
+      <input type="text" size="20" name="shipcity"/>
+    </div>
+    
+    <div class="form-row left">
+      <div class="inputlabel">State</div>
+      <input type="text" size="5" name="shipstate"/>
     </div>
     
     
-    <div class="formrow">
+    <div class="inputgroup left" id="shipzipgroup">
+      <div class="inputlabel">Zip</div>
+      <input type="text" size="5" name="shipzip"/>
+    </div>
+
+    <div class="clear"></div>
+
+    
+    <div class="inputgroup" id="phonegroup">
+      <div class="inputlabel">Phone number</div>
+      <input type="text" size="49" name="phone" id="phone" placeholder="Number">  
+    </div>
+  
+    <div class="inputgroup" id="emailgroup">
+      <div class="inputlabel">Email address</div>
+      <input type="text" size="49" name="email" id="email" placeholder="Email">  
+    </div>
+  
+    <div class="clear"></div>
+    
+    <h1>Billing Information</h1>
+    <div class="inputgroup" id="cardgroup">
+      <div class="inputlabel">Credit card number</div>
+      <input type="text" autocomplete="off" class="card-number" size="49" placeholder="Card number">  
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="form-row left">
       <div class="inputlabel">Expiration (MM/YYYY)</div>
       <input type="text" size="2" class="card-expiry-month"/>
       <span class="inputlabel"> / </span>
       <input type="text" size="4" class="card-expiry-year"/>
     </div>
 
-    <div class="inputgroup" id="cvcgroup">
+    <div class="inputgroup left" id="cvcgroup">
       <div class="inputlabel">CVC</div>
-      <input type="text" size="14" class="card-cvc" placeholder="CVC">
+      <input type="text" size="10" class="card-cvc" placeholder="CVC">
     </div>
+    <div class="clear"></div>
  
 
-    <div class="form-row">
-      <h1>Shipping Address</h1>
-      <label>Address Line 1</label>
-      <input type="text" size="20" name="shipstreet"/>
-      <label>Address Line 2 (optional)</label>
-      <input type="text" size="20" name="shipstreet2"/>
-      <label>City</label>
-      <input type="text" size="20" name="shipcity"/>
-      <label>State/Province/Region</label>
-      <input type="text" size="4" name="shipstate"/>
-      <label>ZIP code</label>
-      <input type="text" size="4" name="shipzip"/>
-      <label>Phone number</label>
-      <input type="tel" size="6" name="phone"/>
-      
-      <!-- TODO: Separate billing address? -->
-      
-    </div>
-    <div class="form-row">
-      <label>Email</label>
-      <input type="email" size="20" name="email"/>
-    </div>
     <input type="hidden" name="amount" value="1000">
     <button type="submit" class="submit-button">Complete Order</button>
 

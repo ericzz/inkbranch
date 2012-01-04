@@ -3,11 +3,14 @@
   
     var group = this;
     var input = this.children('input');
-    var caption = $('<div></div>').addClass('inputcaption').text('hint');
+    var caption = $('<div></div>').addClass('inputcaption');
     var triangle = $('<div></div>').addClass('inputcaptiontriangle');
   
+ 
     group.append(triangle, caption, $('<div></div>').addClass('clear'));
-  
+ 
+    caption.css('left', input.width());
+ 
     if(!validator) {validator = function(){return null;}}
  
     input.focus(function(){

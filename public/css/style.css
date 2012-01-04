@@ -109,6 +109,11 @@ input:focus {
   color: #333;
 }
 
+.left {
+  margin-right: 25px;
+  float: left;
+}
+
 button {
   outline:0;
   border: 0;
