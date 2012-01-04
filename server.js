@@ -113,6 +113,10 @@ app.post('/payment/submit', init, function(req, res) {
   });
 });
 
+app.get('/status', init, function(req, res){
+    res.render('status', {page: 'status'});
+});
+
 app.post('/status', init, function(req, res){
    var order = req.body.order;
    var zip = req.body.zip;
