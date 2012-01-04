@@ -10,7 +10,7 @@ var Address = mongoose.model('Address');
 var Order = mongoose.model('Order');
 var Item = mongoose.model('Item');
 var Style = mongoose.model('Style');
-var User = mongoose.model('User');
+
 
 // Utils
 var util = require('./util.js');
@@ -55,100 +55,35 @@ app.get('/cart', init, function(req, res){
   res.render('cart', {page: 'cart'});
 });
 
+app.get('/status', init, function(req, res){
+  res.render('status', {page: 'status'});
+});
+
+app.post('/status', init, function(req, res){
+   var order = req.body.order;
+   var zip = req.body.zip;
+   Order.findOne({zip: zip, order: order}, function(err, doc){
+    if (doc) {
+      res.render('orderstatus', {page: 'status', order: doc});
+    } else {
+      req.flash('info', 'We couldn\'t find an order #' + order + ' with billing zip ' + zip);
+      res.redirect('/status');
+    }
+  });
+});
+
 app.get('/payment', init, function(req, res){
 
   if (req.session.cart.length <= 0) {
-    req.flash('info', 'You don\t have any items in your cart!');
-    res.redirect('/cart');
-    return;
+    req.flash('info', 'You don\'t have any items in your cart!');
+ //   res.redirect('/cart');
+ //   return;
   }
 
-  if (req.session.user) {
-    res.render('payment', {page: 'payment'});
-  } else {
-    req.flash('info', 'Sign in or register an account to complete payment');
-    res.redirect('/login/payment');
-  }
+  res.render('payment', {page: 'payment'});
+  
 });
 
-app.get('/account', init, function(req, res) {
-  if(req.session.user) {
-    res.render('account', {page: 'account'});
-  } else {
-    // User not logged in
-    req.flash('info', 'Sign in or register an account to access your account dashboard');
-    res.redirect('/login');
-  }
-});
- 
-app.get('/login/:redir?', init, function(req, res) {
-  res.render('login', {page: 'login'});
-});
-
-
-// Attemp to log in or register account
-app.post('/login/:redir?', init, function(req, res) {
-
-  var email = req.body.email;
-  var password = req.body.password;
-  if(req.body.register) {
-    if (password.length < 6) {
-      res.render('login', {page: 'login', register: {email: email, error: 'badpassword'}});
-      return;
-    }
-    if (util.validateEmail(email)) {
-      User.findOne({email: email}, function(err, doc){
-        if (doc) {
-          res.render('login', {page: 'login', register: {email: email, error: 'userexists'}});
-        } else {
-          var user = new User();
-          user.email = email;
-          user.password = util.hash(password);
-          user.save();
-          req.session.user = user;
-          if(req.params.redir) {
-            res.redirect('/' + req.params.redir);
-          } else {
-            res.redirect('/account');
-          }
-        }
-      });
-    } else {
-      res.render('login', {page: 'login', register: {email: email, error: 'invalidemail'}});
-    }
-  } else {
-    // try log in
-    User.findOne({email: email, password: util.hash(password)}, function(err, doc){
-      if (err || !doc) {
-        res.render('login', {page: 'login', login: {email: email, error: 'nouser'}});
-      } else {
-        req.session.user = doc;
-        if(req.params.redir) {
-          res.redirect('/' + req.params.redir);
-        } else {
-          res.redirect('/account');
-        }
-      }
-    });
-  }
-});
-
-
-// AJAX routes
-app.get('/register/verify', init, function(req, res) {
-  var email = req.query.email;
-  if (util.validateEmail(email)) {
-    User.findOne({email: email}, function(err, doc){
-      if (doc) {
-        res.send({error: 'Email is taken'});
-      } else {
-        res.send({});
-      }
-    });
-  } else {
-    res.send({error: 'Invalid email'});
-  }
-});
 
 
 app.get('/cart/add', init, function(req, res) {

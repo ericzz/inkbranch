@@ -14,7 +14,7 @@ $(document).ready(function(){
     $('html, body').animate({scrollTop:target_top}, 500);
   });
   
-  $("#tophatbow a").mouseenter(function() {
+  $("#navigationlinks a").mouseenter(function() {
     $("#ink").stop().animate({
       "margin-left" : $(this).position().left - $("#ink").position().left - 50,
     });

@@ -1,0 +1,23 @@
+<h1>Order status</h1>
+<p>Enter your order number and billing to get your order status.</p>
+<div class="inset box sweater">
+  <form action="/status" method="POST">
+  
+  
+  <div class="inputgroup" id="ordergroup">
+    <div class="inputlabel">Order number</div>
+    <input type="text" id="order" name="order" size="30" placeholder="Order number">  
+  </div>
+  
+
+  <div class="inputgroup" id="zipgroup">
+    <div class="inputlabel">Billing zip code</div>
+    <input type="text" id="zip" name="zip" size="30" placeholder="Billing Zip">
+  </div>
+  <button type="submit">Lookup Order</button>
+  
+  </form>
+  
+  <div class="clear"></div>
+</div>
+<p>If you can't locate your order information, contact us at <a href="mailto:support@inkbranch.com">support@inkbranch.com</a></p>

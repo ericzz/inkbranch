@@ -32,8 +32,9 @@ mongoose.model('Item', Item);
 
 var Order = new Schema({
     id            : ObjectId    //
+  , order         : String      // our own generated order id
   , date          : Date        // date of order
-  , address       : ObjectId     // ship to address object
+  , address       : ObjectId    // ship to address object
   , status        : String      // cart/payment/shipment status
   , items         : [Item]      // items in order
   , payment       : String      // payment metadata
@@ -41,11 +42,3 @@ var Order = new Schema({
 });
 mongoose.model('Order', Order);
 
-
-var User = new Schema({
-    id         : ObjectId // 
-  , email      : String   // email/username
-  , password   : String   // hashed password
-  , address    : ObjectId  // saved shipping address
-});
-mongoose.model('User', User);
