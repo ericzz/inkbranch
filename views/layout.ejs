@@ -20,8 +20,37 @@
   <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 
   <script type="text/javascript">
-    // Test mode
-    Stripe.setPublishableKey('pk_F56u4OJSBqDz79RcMBLNVNIciEVqX');
+// Test mode
+Stripe.setPublishableKey('pk_F56u4OJSBqDz79RcMBLNVNIciEVqX');
+    
+function stripeResponseHandler(status, response) {
+  if (response.error) {
+    // TODO: determine if this can all be handled server side.
+    $(".payment-errors").html(response.error.message);
+  } else {
+    var form$ = $("#payment-form");
+    var token = response['id'];
+    form$.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
+    form$.get(0).submit();
+  }
+}   
+  
+$(document).ready(function() {
+  $("#payment-form").submit(function(event) {
+    // disable the submit button to prevent repeated clicks
+    $('.submit-button').attr("disabled", "disabled");
+    var amount = 1000;
+    Stripe.createToken({
+        number: $('.card-number').val(),
+        cvc: $('.card-cvc').val(),
+        exp_month: $('.card-expiry-month').val(),
+        exp_year: $('.card-expiry-year').val()
+    }, amount, stripeResponseHandler);
+
+    // prevent the form from submitting with the default action
+    return false;
+  });
+});
 
   </script>
 <% } %>

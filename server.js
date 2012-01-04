@@ -55,8 +55,62 @@ app.get('/cart', init, function(req, res){
   res.render('cart', {page: 'cart'});
 });
 
-app.get('/status', init, function(req, res){
-  res.render('status', {page: 'status'});
+app.get('/payment', init, function(req, res){
+
+  /*if (req.session.cart.length <= 0) {
+    req.flash('info', 'You don\t have any items in your cart!');
+    res.redirect('/cart');
+    return;
+  }*/
+
+    res.render('payment', {page: 'payment'});
+});
+
+// Paying
+app.post('/payment/submit', init, function(req, res) {
+  stripe.charges.create({
+    amount: req.body.amount,
+    currency: 'usd',
+    card: req.body.token,
+    description: req.session.cart
+  }, function(err, response) {
+    if (!response.error) {
+      console.log(response.id);
+      
+      var address = new Address({
+        addr1: req.body.shipstreet,
+        addr2: req.body.shipstreet2,
+        city: req.body.shipcity,
+        state: req.body.shipstate,
+        zip: req.body.shipzip,
+        phone: req.body.phone
+      });
+      
+      var order = new Order({
+        date: new Date(), // TODO: time zone handling.
+        address: address._id,
+        status: "paid", // TODO: admin panel for status handling/viewing?
+        items: req.session.cart,
+        payment: response.id,
+        email: req.body.email
+      });
+      
+      order.save(function(err) {
+        log(err);
+      });
+      
+      address.save(function(err) {
+        log(err);
+      });
+      
+      req.flash('info', 'Payment successful!');
+      res.redirect('/payment/success');
+    } else {
+      console.log(response.error.message);
+      req.flash('error', 'Payment unsuccessful.');
+      res.redirect('/payment');
+    }
+  });
 });
 
 app.post('/status', init, function(req, res){
@@ -108,6 +162,8 @@ app.get('/cart/update', init, function(req, res) {
   }
 });
 
+
+
 function init(req, res, next) {
   
   if (!req.session.cart) {
@@ -118,5 +174,5 @@ function init(req, res, next) {
 }
 
 
-var port = process.env.PORT || 8084
+var port = process.env.PORT || 8088
 app.listen(port);
